@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0xf3qnqprflf"]
+
+[ext_resource type="Script" uid="uid://b83mybhqimy7i" path="res://scenes/window_second_edition.gd" id="1_4vu60"]
+
+[node name="WindowSecondEdition" type="Node2D"]
+script = ExtResource("1_4vu60")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Second Type Spawner"
+
+[node name="Window" type="Window" parent="."]
+mode = 1
+initial_position = 2
+size = Vector2i(250, 250)
+visible = false
+
+[node name="Label" type="Label" parent="Window"]
+offset_right = 81.0
+offset_bottom = 36.0
+text = "This is the first file, there will be some tid bits of lore and some tutorials"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="mouse_exited" from="Window" to="." method="_on_window_mouse_exited"]
