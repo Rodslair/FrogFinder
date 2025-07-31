@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnjt58riblat1"]
+
+[ext_resource type="Script" uid="uid://dovevd8gu6ey0" path="res://scenes/tic_tac_toe_square.gd" id="1_kmn0i"]
+
+[node name="Button" type="Button"]
+offset_right = 57.0
+offset_bottom = 55.0
+toggle_mode = true
+script = ExtResource("1_kmn0i")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]
