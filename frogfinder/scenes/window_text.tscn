@@ -10,3 +10,6 @@ script = ExtResource("2_4ofyp")
 offset_right = 40.0
 offset_bottom = 23.0
 text = "This is the first file, there will be some tid bits of lore and some tutorials"
+autowrap_mode = 2
+
+[connection signal="size_changed" from="Window" to="." method="_on_window_size_changed"]
