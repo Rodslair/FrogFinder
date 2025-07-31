@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://fg0upr0ha3ag"]
+
+[ext_resource type="PackedScene" uid="uid://d0xf3qnqprflf" path="res://scenes/window_parent.tscn" id="1_1pncw"]
+[ext_resource type="Script" uid="uid://pin3hjok6twm" path="res://scenes/window_text.gd" id="2_4ofyp"]
+
+[node name="WindowSecondEdition" instance=ExtResource("1_1pncw")]
+script = ExtResource("2_4ofyp")
+
+[node name="Label" type="Label" parent="Window" index="0"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "This is the first file, there will be some tid bits of lore and some tutorials"

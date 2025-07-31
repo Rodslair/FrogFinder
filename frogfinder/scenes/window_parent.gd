@@ -1,8 +1,9 @@
 extends Node2D
+class_name master_window
 
 var default_x_size = 250
 var default_y_size = 250
-var default_pos: Vector2 = Vector2(960, 540)
+var default_pos: Vector2 = Vector2(750, 450)
 var file_name = 'Read Me.txt'
 
 # Called when the node enters the scene tree for the first time.
@@ -15,7 +16,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	#if the window leaves the playable area it snaps back to where it should be
-	if ($Window.position.x > 1700 or $Window.position.y > 1000) and ( not
+	if ($Window.position.x > 1500 or $Window.position.y > 900
+		or $Window.position.x < 0 or $Window.position.y < 0) and ( not
 		Input.is_action_pressed(("click"))
 	):
 		$Window.position = default_pos
@@ -26,9 +28,17 @@ func _on_button_pressed() -> void:
 		$Window.show()
 		$Window.size = Vector2(default_x_size,default_y_size)
 		$Window.position = default_pos
+	if ($Window.position.x > 1500 or $Window.position.y > 900
+		or $Window.position.x < 0 or $Window.position.y < 0) and ( not
+		Input.is_action_pressed(("click"))
+	):
+		$Window.position = default_pos
+	print($Window.position)
 
 func _on_window_close_requested() -> void:
 	$Window.hide()
-	
+
+
 func _on_window_mouse_exited() -> void:
-	print($Window.position)
+	pass
+	
