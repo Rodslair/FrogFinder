@@ -34,6 +34,8 @@ func _on_button_pressed() -> void:
 	):
 		$Window.position = default_pos
 	print($Window.position)
+	#code that does something
+	
 
 func _on_window_close_requested() -> void:
 	$Window.hide()
