@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0xf3qnqprflf"]
+[gd_scene load_steps=3 format=3 uid="uid://d0xf3qnqprflf"]
 
 [ext_resource type="Script" uid="uid://b83mybhqimy7i" path="res://scenes/window_parent.gd" id="1_4vu60"]
+[ext_resource type="Texture2D" uid="uid://dpytp2fde85fr" path="res://assets/Window Base.png" id="2_wxr5m"]
 
 [node name="WindowSecondEdition" type="Node2D"]
 script = ExtResource("1_4vu60")
@@ -14,7 +15,40 @@ text = "Second Type Spawner"
 mode = 1
 initial_position = 1
 size = Vector2i(250, 250)
-visible = false
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Window"]
+anchors_preset = -1
+anchor_left = -0.024
+anchor_top = -0.124
+anchor_right = 1.024
+anchor_bottom = 1.02
+offset_top = -0.999998
+offset_right = 2.0
+offset_bottom = -3.05176e-05
+texture = ExtResource("2_wxr5m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window"]
+anchors_preset = -1
+anchor_right = 0.992
+anchor_bottom = 0.992
+offset_top = 1.0
+offset_right = 2.0
+offset_bottom = 1.0
+
+[node name="Label" type="Label" parent="Window/VBoxContainer"]
+layout_mode = 2
+text = "Lorum ipsum dolor"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Window/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Cancel"
+
+[node name="Button2" type="Button" parent="Window/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "OK"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
